@@ -1,3 +1,7 @@
+export function generateStaticParams() {
+  return [{ blogID: '1' }, { blogID: '2' }, { blogID: '3' }, { blogID: '4' }, { blogID: '5' }]
+}
+
 async function BlogDetail({ params }) {
   const { blogID } = await params
   console.log(blogID)
