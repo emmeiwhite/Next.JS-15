@@ -4,9 +4,9 @@ function BlogDetail(props) {
   // We'll make another API call and get the Blog with this particular blogID
   return (
     <div className="max-w-6xl mx-auto px-6 py-6">
-      <h1>
+      <h1 className="text-2xl mb-5">
         {' '}
-        Blog Page on <strong>{params.blogID}</strong>
+        Blog about: <strong>{params.blogID}</strong>
       </h1>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde iste, iure repudiandae
