@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Blogs | Technical Agency'
 }
+import Link from 'next/link'
 
 function Blogs() {
   return (
@@ -8,9 +9,27 @@ function Blogs() {
       <h1>Blogs</h1>
 
       <ul>
-        <li>Blog1</li>
-        <li>Blog2</li>
-        <li>Blog3</li>
+        <li>
+          <Link
+            href="/blogs/1"
+            className="text-blue-600 hover:underline">
+            Blog1
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/blogs/2"
+            className="text-blue-600 hover:underline">
+            Blog2
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/blogs/3"
+            className="text-blue-600 hover:underline">
+            Blog3
+          </Link>
+        </li>
       </ul>
     </div>
   )
