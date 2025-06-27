@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { LuSun, LuMoon } from 'react-icons/lu'
 
 function Header() {
+  // Dummy values --- Will get from the Context
   const [isDark, setIsDark] = useState(false)
 
   function handleTheme() {
