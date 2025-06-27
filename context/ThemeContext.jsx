@@ -8,13 +8,18 @@ export default function ThemeContext() {
     setIsDark(prev => !prev)
   }
 
+  useEffect(() => {
+    localStorage.setItem('isDark', isDark)
+    document.body.classList.toggle('dark-mode', isDark)
+  }, [isDark])
+
   const themeContextValues = {
     isDark,
-    themeContextValues,
+    handleTheme,
     setIsDark
   }
 
-  /** To Toggle the class="dark" on the html element. */
+  /** --- To Toggle the class="dark" on the html element.
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark')
@@ -22,6 +27,7 @@ export default function ThemeContext() {
       document.documentElement.classList.remove('dark')
     }
   }, [isDark])
+   --- */
 
   return <ThemeContext.Provider value={themeContextValues}>ThemeContext</ThemeContext.Provider>
 }
