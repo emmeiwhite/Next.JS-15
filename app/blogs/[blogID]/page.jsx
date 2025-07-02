@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   const response = await fetch('https://dummyjson.com/recipes')
   const data = await response.json()
   console.log(data)
-  // Returned array of blogID's on the basis of which Dynamically pages were rendered. Now the same pages are generated at build time, since these are frequently used pages in our application. How awesome is it that NEXT.JS renders the
+  // Returned array of blogID's on the basis of which Dynamically pages were rendered. Now the same pages are generated at build time, since these are frequently used pages in our application. How awesome is it that NEXT.JS renders the pages on build time though these were dynamic pages setup with dynamic routes
   return data.recipes.map(recipe => ({
     blogID: `${recipe.id}`
   }))
@@ -21,6 +21,12 @@ export async function generateStaticParams() {
 // One Page to handle Dynamic Routes, which is fantastic
 async function BlogDetail({ params }) {
   const { blogID } = await params
+
+  /** We are throwing an error delibrately to learn how to handle errors in Next.js */
+  if (blogID % 2 === 0) {
+    console.log(object)
+  }
+
   console.log(blogID)
   // We'll make another API call and get the Blog with this particular blogID
   return (

@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 
 const ThemeContext = createContext()
 export default function ThemeContext() {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(localStorage.getItem('isDark') === 'false' ? false : true)
 
   function handleTheme() {
     setIsDark(prev => !prev)
